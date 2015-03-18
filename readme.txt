@@ -9,3 +9,6 @@ Settings:
 	FILE_NAME: file name for save
 	SAVE_PATH: the path for save file
 	FILE_ID: Google spreadsheet file_id got from page address
+
+NOTIFICATION:
+Change [client_secret], [client_email] and [client_id] to proper value in client_secrets.json file that get from Google Console
