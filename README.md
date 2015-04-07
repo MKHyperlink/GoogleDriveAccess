@@ -1,7 +1,6 @@
 
 # GoogleDriveAccess
-## Access to google spreadsheet content.
-
+Access to google spreadsheet content.
 
 ###Dependent module:  
 (Maybe needs sudo)
