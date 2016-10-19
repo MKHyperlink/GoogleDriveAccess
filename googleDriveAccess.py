@@ -21,9 +21,16 @@ FILE_NAME = "spreadsheet.csv"
 SAVE_PATH = "./%s" %(FILE_NAME)
 #Google spreadsheet file_id
 FILE_ID = ""
+#spreadsheet tab id
+GID = ""
 
 if not FILE_ID:
 	FILE_ID = raw_input('Enter Google spreadsheet File ID: ').strip()
+
+if not GID:
+	GID = raw_input('Enter Google spreadsheet GID for specific tab if needed: ').strip()
+else:
+	GID = "0"  #first tab
 
 # OAuth 2.0 scope that will be authorized.
 # Check https://developers.google.com/drive/scopes for all available scopes.
@@ -55,7 +62,7 @@ credentials.authorize(http)
 drive_service = apiclient.discovery.build('drive', 'v2', http=http)
 
 file = fileOperate.get_file(drive_service, FILE_ID)
-content = fileOperate.download_file(drive_service, file)
+content = fileOperate.download_file(drive_service, file, GID)
 fileOperate.save_file(content, SAVE_PATH);
 
 # Insert a file. Files are comprised of contents and metadata.

@@ -20,7 +20,7 @@ def print_file(service, file_id):
     print 'An error occurred: %s' % error
 
 
-def download_file(service, drive_file):
+def download_file(service, drive_file, gid):
   """Download a file's content.
 
   Args:
@@ -32,6 +32,7 @@ def download_file(service, drive_file):
   """
   # download_url = drive_file.get('downloadUrl')
   download_url = drive_file.get('exportLinks').get('text/csv')
+  download_url = "%s&gid=%s" %(download_url, gid)
   print download_url
   if download_url:
     resp, content = service._http.request(download_url)
