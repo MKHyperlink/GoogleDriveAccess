@@ -2,7 +2,7 @@
 # GoogleDriveAccess
 Access to google spreadsheet content.
 
-###Dependent module:  
+### Dependent module:  
 (Maybe needs sudo)
 
 1. Google APIs Client Library => pip install --upgrade google-api-python-client  
@@ -11,7 +11,7 @@ Please downgrade install => pip install -I google-api-python-client==1.3.2 <br>
 reference:<http://stackoverflow.com/questions/29190604/attribute-error-trying-to-run-gmail-api-quickstart-in-python>)
 2. Httplib2 => pip install httplib2
 
-###Execute steps:
+### Execute steps:
 
 1. Change [client_secret], [client_email] and [client_id] to proper value in "client_secrets.json" file that get from Google Console <br>
 	(Reference:<https://github.com/jay0lee/GAM/wiki/Creating-client_secrets.json-and-oauth2service.json>)
@@ -20,7 +20,7 @@ reference:<http://stackoverflow.com/questions/29190604/attribute-error-trying-to
 4. Copy Access Token from browser and paste to console.
 5. Got exported file.
 
-###Settings:
+### Settings:
 
 1. Open googleDriveAccess.py
 2. Modify  
@@ -28,7 +28,7 @@ reference:<http://stackoverflow.com/questions/29190604/attribute-error-trying-to
 	SAVE_PATH: the path for save file  
 	FILE_ID: Google spreadsheet file_id got from page address  
 
-###NOTIFICATION:
+### NOTIFICATION:
 
 1. If got AttributeError: 'Module_six_moves_urllib_parse' in Mac OS. Execute following command  
 	=> easy_install --upgrade six  
