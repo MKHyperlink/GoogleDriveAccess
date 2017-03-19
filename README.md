@@ -10,9 +10,7 @@ Access to google spreadsheet content.
 Please downgrade install:<br>
 => pip install -I google-api-python-client==1.3.2 <br>
 => pip install oauth2client==2.2.0 <br>
-Please downgrade install:<br> => pip install -I google-api-python-client==1.3.2 <br>
 reference:<http://stackoverflow.com/questions/29190604/attribute-error-trying-to-run-gmail-api-quickstart-in-python>)
-2. Httplib2 => pip install httplib2
 
 ### Execute steps:
 
