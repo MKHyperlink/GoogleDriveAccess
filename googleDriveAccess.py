@@ -16,21 +16,21 @@ import webbrowser
 import fileOperate
 
 #Export file name
-FILE_NAME = "spreadsheet.csv"	
+FILE_NAME = "language.csv"	
 #Export file path
 SAVE_PATH = "./%s" %(FILE_NAME)
 #Google spreadsheet file_id
 FILE_ID = ""
+
 #spreadsheet tab id
-GID = ""
+GID_FIRST_PAGE = "0" #first tab
+gid = GID_FIRST_PAGE
 
 if not FILE_ID:
 	FILE_ID = raw_input('Enter Google spreadsheet File ID: ').strip()
 
-if not GID:
-	GID = raw_input('Enter Google spreadsheet GID for specific tab if needed: ').strip()
-else:
-	GID = "0"  #first tab
+if not gid:
+	gid = raw_input('Enter Google spreadsheet GID for specific tab if needed: ').strip()
 
 # OAuth 2.0 scope that will be authorized.
 # Check https://developers.google.com/drive/scopes for all available scopes.
@@ -62,7 +62,7 @@ credentials.authorize(http)
 drive_service = apiclient.discovery.build('drive', 'v2', http=http)
 
 file = fileOperate.get_file(drive_service, FILE_ID)
-content = fileOperate.download_file(drive_service, file, GID)
+content = fileOperate.download_file(drive_service, file, gid)
 fileOperate.save_file(content, SAVE_PATH);
 
 # Insert a file. Files are comprised of contents and metadata.
