@@ -1,5 +1,6 @@
 from apiclient import errors
-
+import os
+import errno
 
 def get_file(service, file_id):
   return service.files().get(fileId=file_id).execute()
@@ -47,6 +48,14 @@ def download_file(service, drive_file, gid):
     return None
 
 def save_file(content, path):
+
+  if not os.path.exists(os.path.dirname(path)):
+    try:
+        os.makedirs(os.path.dirname(path))
+    except OSError as exc: # Guard against race condition
+        if exc.errno != errno.EEXIST:
+            raise
+
   text_file = open(path, "w")
   text_file.write(content)
   text_file.close()
