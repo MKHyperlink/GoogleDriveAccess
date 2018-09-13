@@ -6,11 +6,7 @@ Access to google spreadsheet content.
 (Maybe needs sudo)
 
 1. Google APIs Client Library => pip install --upgrade google-api-python-client  
-	(The version of google-api-python-client above 1.4.0 will install fail on macOS El Capitan and above. <br> 
-Please downgrade install:<br>
-=> pip install -I google-api-python-client==1.3.2 <br>
-=> pip install oauth2client==2.2.0 <br>
-reference:<http://stackoverflow.com/questions/29190604/attribute-error-trying-to-run-gmail-api-quickstart-in-python>)
+	(If you install google-api-python-client fail in macOS, try to use 'pip install --user --upgrade google-api-python-client.)
 
 ### Execute steps:
 
@@ -43,4 +39,5 @@ reference:<http://stackoverflow.com/questions/29190604/attribute-error-trying-to
 3. The google-api-python-client use the v1.5+ of "six module" after v1.3.2, hence we have few choice: <br>
 	1). Use older version google-api-python-client v1.3.2 <br>
 	2). homebrew install python. (Don't use deault python on macOS install new one)<br>
-	3). using a virtualenv
+	3). Use virtualenv<br>
+	4). Use pip install --user 
