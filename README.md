@@ -10,9 +10,8 @@ Access to google spreadsheet content.
 
 ### Execute steps:
 
-1. Create a project in Google Console(shoul be enable Drive API) and generate your own "client_secrets.json" file. <br>
-	(Reference:<https://github.com/jay0lee/GAM/wiki/Creating-client_secrets.json-and-oauth2service.json>)
-2. python googleDriveAccess.py
+1. Create a project in Google Console(shoul be enable Drive API) and generate your own "client_secrets.json" file. 
+2. \>> python googleDriveAccess.py
 3. Copy Google Sheet File_ID and paste to console.
 4. Copy Access Token from browser and paste to console.
 5. Got exported file.
@@ -21,9 +20,9 @@ Access to google spreadsheet content.
 
 1. Open googleDriveAccess.py
 2. Modify  
-	FILE_NAME: file name for save  
-	SAVE_PATH: the path for save file  
-	FILE_ID: Google spreadsheet file_id got from page address  
+	FILE_NAME: the name what you want to save for file. Default file name is: language.csv <br>
+	SAVE_PATH: the path where file to save.  Default path is: ./ <br>
+	FILE_ID: Google spreadsheet file_id got from page URL. If you left this blank, you need input every time when execute googleDriveAccess.py
 
 ### NOTICE:
 
