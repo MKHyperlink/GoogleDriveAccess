@@ -15,10 +15,10 @@ def print_file(service, file_id):
   try:
     file = service.files().get(fileId=file_id).execute()
 
-    print 'Title: %s' % file['title']
-    print 'MIME type: %s' % file['mimeType']
-  except errors.HttpError, error:
-    print 'An error occurred: %s' % error
+    print('Title: %s' % file['title'])
+    print('MIME type: %s' % file['mimeType'])
+  except errors.HttpError as error:
+    print('An error occurred: %s' % error)
 
 
 def download_file(service, drive_file, gid):
@@ -34,14 +34,14 @@ def download_file(service, drive_file, gid):
   # download_url = drive_file.get('downloadUrl')
   download_url = drive_file.get('exportLinks').get('text/csv')
   download_url = "%s&gid=%s" %(download_url, gid)
-  print download_url
+  print(download_url)
   if download_url:
     resp, content = service._http.request(download_url)
     if resp.status == 200:
-      print 'Status: %s' % resp
+      print('Status: %s' % resp)
       return content
     else:
-      print 'An error occurred: %s' % resp
+      print('An error occurred: %s' % resp)
       return None
   else:
     # The file doesn't have any content stored on Drive.
@@ -56,6 +56,6 @@ def save_file(content, path):
         if exc.errno != errno.EEXIST:
             raise
 
-  text_file = open(path, "w")
+  text_file = open(path, "wb+")
   text_file.write(content)
   text_file.close()

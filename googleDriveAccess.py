@@ -30,10 +30,10 @@ GID_FIRST_PAGE = "0" #first tab
 gid = GID_FIRST_PAGE
 
 if not FILE_ID:
-	FILE_ID = raw_input('Enter Google spreadsheet File ID: ').strip()
+	FILE_ID = input('Enter Google spreadsheet File ID: ').strip()
 
 if not gid:
-	gid = raw_input('Enter Google spreadsheet GID for specific tab if needed: ').strip()
+	gid = input('Enter Google spreadsheet GID for specific tab if needed: ').strip()
 
 # OAuth 2.0 scope that will be authorized.
 # Check https://developers.google.com/drive/scopes for all available scopes.
@@ -93,7 +93,7 @@ def get_credentials_by_input():
 	authorize_url = flow.step1_get_authorize_url()
 	# print 'Go to the following link in your browser: ' + authorize_url
 	webbrowser.open_new_tab(authorize_url)
-	code = raw_input('Enter verification code: ').strip()
+	code = input('Enter verification code: ').strip()
 	return flow.step2_exchange(code)
 
 credentials = get_credentials()
