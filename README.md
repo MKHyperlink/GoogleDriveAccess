@@ -1,6 +1,7 @@
 
 # GoogleDriveAccess
 Access to google spreadsheet content.
+(Support Python 3 in branch python3.0)
 
 ### Dependent module:  
 (Maybe needs sudo)
